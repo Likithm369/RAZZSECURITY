@@ -1,0 +1,873 @@
+<!DOCTYPE html><html lang="en"><head>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
+
+    <!-- JavaScript -->
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/popper.min.js" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script defer="" src="js/all.js" crossorigin="anonymous"></script>
+    <style>
+        html {
+            font-size: 1rem;
+        }
+
+        @include media-breakpoint-up(sm) {
+            html {
+                font-size: 1.2rem;
+            }
+        }
+
+        @include media-breakpoint-up(md) {
+            html {
+                font-size: 1.4rem;
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            html {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* Home border*/
+
+        .border-trans {
+            border-color: rgba(125, 125, 125, 0.1);
+        }
+    </style>
+
+    <!-- Title -->
+    <title>Razz Security</title>
+
+    <!-- CSS override/definitions -->
+    <style>
+        .site-footer {
+            background-color: #343a40;
+            padding: 45px 0 20px;
+            font-size: 15px;
+            line-height: 24px;
+            color: #737373;
+        }
+
+        .site-footer hr {
+            border-top-color: #bbb;
+            opacity: 0.5
+        }
+
+        .site-footer hr.small {
+            margin: 20px 0
+        }
+
+        .site-footer h6 {
+            color: #fff;
+            font-size: 16px;
+            text-transform: uppercase;
+            margin-top: 5px;
+            letter-spacing: 2px
+        }
+
+        .site-footer a {
+            color: #737373;
+        }
+
+        .site-footer a:hover {
+            color: #3366cc;
+            text-decoration: none;
+        }
+
+        .footer-links {
+            padding-left: 0;
+            list-style: none
+        }
+
+        .footer-links li {
+            display: block
+        }
+
+        .footer-links a {
+            color: #737373
+        }
+
+        .footer-links a:active,
+        .footer-links a:focus,
+        .footer-links a:hover {
+            color: #3366cc;
+            text-decoration: none;
+        }
+
+        .footer-links.inline li {
+            display: inline-block
+        }
+
+        .site-footer .social-icons {
+            text-align: right
+        }
+
+        .site-footer .social-icons a {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            margin-left: 6px;
+            margin-right: 0;
+            border-radius: 100%;
+            background-color: #33353d
+        }
+
+        .copyright-text {
+            margin: 0
+        }
+
+        @media (max-width: 991px) {
+            .site-footer [class^=col-] {
+                margin-bottom: 30px
+            }
+        }
+
+        @media (max-width: 767px) {
+            .site-footer {
+                padding-bottom: 0
+            }
+
+            .site-footer .copyright-text,
+            .site-footer .social-icons {
+                text-align: center
+            }
+        }
+
+        .social-icons {
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none
+        }
+
+        .social-icons li {
+            display: inline-block;
+            margin-bottom: 4px
+        }
+
+        .social-icons li.title {
+            margin-right: 15px;
+            text-transform: uppercase;
+            color: #96a2b2;
+            font-weight: 700;
+            font-size: 13px
+        }
+
+        .social-icons a {
+            background-color: #eceeef;
+            color: #818a91;
+            font-size: 16px;
+            display: inline-block;
+            line-height: 44px;
+            width: 44px;
+            height: 44px;
+            text-align: center;
+            margin-right: 8px;
+            border-radius: 100%;
+            -webkit-transition: all .2s linear;
+            -o-transition: all .2s linear;
+            transition: all .2s linear
+        }
+
+        .social-icons a:active,
+        .social-icons a:focus,
+        .social-icons a:hover {
+            color: #fff;
+            background-color: #29aafe
+        }
+
+        .social-icons.size-sm a {
+            line-height: 34px;
+            height: 34px;
+            width: 34px;
+            font-size: 14px
+        }
+
+        @media (max-width: 767px) {
+            .social-icons li.title {
+                display: block;
+                margin-right: 0;
+                font-weight: 600
+            }
+        }
+
+        .col-centered {
+            float: none;
+            margin: 0 auto;
+        }
+
+        .btn-circle {
+            width: 50px;
+            height: 50px;
+            padding: 6px 0px;
+            border-radius: 25px;
+            text-align: center;
+            font-size: 12px;
+            line-height: 1.42857;
+        }
+
+        .border-3 {
+            border-width: 3px !important;
+        }
+
+        .carousel-desc-head {
+            font-size: 60px;
+            font-family: "poppins,sans-serif";
+            font-weight: bold;
+        }
+
+        .carousel-desc-body {
+            font-size: 30px;
+            font-family: "poppins,sans-serif";
+            font-weight: bold;
+        }
+
+        body {
+            padding-top: 76px;
+        }
+
+        .carousel-caption {
+            top: 0;
+            left: 0;
+            bottom: auto;
+        }
+
+        .carousel-caption {
+            top: 0;
+            max-width: 100%;
+            width: 100%;
+            max-height: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            left: 0;
+            text-align: left;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        /* image center */
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+
+        .purple-background {
+            background: linear-gradient(90.4deg, rgb(248, 52, 246) 0.6%, rgb(152, 38, 252) 90%);
+        }
+    </style>
+
+    <!-- <script>
+        $(document).ready(function(){
+            $('html, body').animate({
+                scrollTop: 0
+            }, 2000);
+        });
+        $('.navbar-nav>li>a').on('click', function(){
+        $('.navbar-collapse').collapse('hide');
+        });
+    </script> -->
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light shadow">
+        <a class="navbar-brand" href="index.html">
+            <img src="images/razzsec-logo-black.png" class="img-fluid" style="height: 50px" alt="Razz Security Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div role="tablist" class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav align-items-center mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" onclick=" window.open('index.html','_self')">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://academy.razzsecurity.com/" target="_blank">Academy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://blog.razzsecurity.com/" target="_blank">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="services-tab" data-toggle="tab" target="_self" href="#services" role="tab" aria-controls="services" aria-selected="false" onclick=" window.open('services.html','_self')">
+                        Services
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="connect-tab" data-toggle="tab" href="#connect" target="_blank" role="tab" aria-controls="connect" aria-selected="false" onclick=" window.open('connect.html','_self')">
+                        Connect
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="gallery-tab" data-toggle="tab" target="_blank" role="tab" aria-controls="gallery" aria-selected="false" onclick="window.open('gallery.html','_self')" href="#gallery">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="aboutus-tab" data-toggle="tab" href="#aboutus" onclick=" window.open('aboutus.html','_self')" role="tab" aria-controls="aboutus" aria-selected="false">
+                        About Us
+                    </a>
+
+                </li><li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" onclick=" window.open('contact.php','_self')" role="tab" aria-controls="contact" aria-selected="false">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Jumbotron -->
+    <div class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" style="background-color: rgba(10,10,10,0.8);">
+            <div class="carousel-item active">
+                <!-- Desktop view -->
+                <img class="img-fluid" src="images/1.webp" alt="First slide">
+                <div class="carousel-caption d-md-flex">
+                    <div class="align-self-center ml-5 d-none d-lg-block" style="padding-left:22em;">
+                        <h1 class="text-center"><b>A Cybersecurity Company</b></h1>
+                        <h4 class="text-center">We care for your security</h4>
+                        <div class="d-none d-lg-block">
+                            <div style="padding-left:35%;">
+                                <button type="button" class="ml-5 btn btn-lg btn-circle btn-success skipBtn"><span class="fas fa-2x fa-arrow-down"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Mobile view -->
+                    <div class="align-self-center ml-5 d-lg-none" style="padding-right:5%	">
+                        <h4 class="text-center"><b>A Cybersecurity Company</b></h4>
+                        <h5 class="text-center">We care for your security</h5>
+                        <div class="d-none d-lg-block">
+                            <div style="padding-left:30%;">
+                                <button type="button" class="ml-5 btn btn-lg btn-circle btn-success skipBtn"><span class="fas fa-2x fa-arrow-down"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <!-- Desktop View -->
+                <img class="img-fluid" src="images/2.webp" alt="Second slide">
+                <div class="carousel-caption d-md-flex">
+                    <div class="align-self-center ml-5 d-none d-lg-block" style="padding-left:22em;">
+                        <h1 class="text-center"><b>A Cybersecurity Company</b></h1>
+                        <h4 class="text-center">We care for your security</h4>
+                        <div class="d-none d-lg-block">
+                            <div style="padding-left:35%;">
+                                <button type="button" class="ml-5 btn btn-lg btn-circle btn-success skipBtn"><span class="fas fa-2x fa-arrow-down"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Mobile view -->
+                    <div class="align-self-center ml-5 d-lg-none" style="padding-right:5%	">
+                        <h4 class="text-center"><b>A Cybersecurity Company</b></h4>
+                        <h5 class="text-center">We care for your security</h5>
+                        <div class="d-none d-lg-block">
+                            <div style="padding-left:15%;">
+                                <button type="button" class="ml-5 btn btn-lg btn-circle btn-success skipBtn"><span class="fas fa-2x fa-arrow-down"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <!-- Desktop View -->
+                <img class="d-block w-100" src="images/3.webp" alt="Third slide">
+                <div class="carousel-caption d-md-flex">
+                    <div class="align-self-center ml-5 d-none d-lg-block" style="padding-left:22em;">
+                        <h1 class="text-center"><b>A Cybersecurity Company</b></h1>
+                        <h4 class="text-center">We care for your security</h4>
+                        <div class="d-none d-lg-block">
+                            <div style="padding-left:35%;">
+                                <button type="button" class="ml-5 btn btn-lg btn-circle btn-success skipBtn"><span class="fas fa-2x fa-arrow-down"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Mobile view -->
+                    <div class="align-self-center ml-5 d-lg-none" style="padding-right:5%	">
+                        <h4 class="text-center"><b>A Cybersecurity Company</b></h4>
+                        <h5 class="text-center">We care for your security</h5>
+                        <div class="d-none d-lg-block">
+                            <div style="padding-left:15%;">
+                                <button type="button" class="ml-5 btn btn-lg btn-circle btn-success skipBtn"><span class="fas fa-2x fa-arrow-down"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <!-- Desktop View -->
+                <img class="d-block w-100" src="images/4.webp" alt="Fourth slide">
+                <div class="carousel-caption d-md-flex">
+                    <div class="align-self-center ml-5 d-none d-lg-block" style="padding-left:22em;">
+                        <h1 class="text-center"><b>A Cybersecurity Company</b></h1>
+                        <h4 class="text-center">We care for your security</h4>
+                        <div class="d-none d-lg-block">
+                            <div style="padding-left:35%;">
+                                <button type="button" class="ml-5 btn btn-lg btn-circle btn-success skipBtn"><span class="fas fa-2x fa-arrow-down"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Mobile view -->
+                    <div class="align-self-center ml-5 d-lg-none" style="padding-right:5%	">
+                        <h4 class="text-center"><b>A Cybersecurity Company</b></h4>
+                        <h5 class="text-center">We care for your security</h5>
+                        <div class="d-none d-lg-block">
+                            <div style="padding-left:15%;">
+                                <button type="button" class="ml-5 btn btn-lg btn-circle btn-success skipBtn"><span class="fas fa-2x fa-arrow-down"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <!-- Desktop View -->
+                <img class="d-block w-100" src="images/5.webp" alt="Fifth slide">
+                <div class="carousel-caption d-md-flex">
+                    <div class="align-self-center ml-5 d-none d-lg-block" style="padding-left:22em;">
+                        <h1 class="text-center"><b>A Cybersecurity Company</b></h1>
+                        <h4 class="text-center">We care for your security</h4>
+                        <div class="d-none d-lg-block">
+                            <div style="padding-left:35%;">
+                                <button type="button" class="ml-5 btn btn-lg btn-circle btn-success skipBtn"><span class="fas fa-2x fa-arrow-down"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Mobile view -->
+                    <div class="align-self-center ml-5 d-lg-none" style="padding-right:5%	">
+                        <h4 class="text-center"><b>A Cybersecurity Company</b></h4>
+                        <h5 class="text-center">We care for your security</h5>
+                        <div class="d-none d-lg-block">
+                            <div style="padding-left:15%;">
+                                <button type="button" class="ml-5 btn btn-lg btn-circle btn-success skipBtn"><span class="fas fa-2x fa-arrow-down"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <br>
+    <div class="container tab-content" id="main">
+        <div class="tab-pane fade show active container" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <h2 class="text-center pt-3 pb-3">About Us</h2>
+            <div class="row">
+                <div class="col-lg-3 text-center">
+                    <img class="p-2" src="images/hacker.webp" alt="hackers image" height="190px;">
+                </div>
+                <div class="col-lg-9">
+                    <p class="text-justify">
+                        We secure enterprises, startups, and organizations with cybersecurity solutions to make
+                        businesses safe and secure online so that our clients conduct their daily interactions with a
+                        flawless level of security from bad hackers.
+                    </p>
+                </div>
+            </div>
+            <div class="text-center pt-2 pb-3">
+                <a href="aboutus.html" class="btn btn-outline-primary">Know More</a>
+            </div>
+            <h5 class="pt-5 pb-3"><b>Why is cyber security important?</b></h5>
+            <div class="row">
+                <div class="col-lg-3 text-center">
+                    <img src="images/cybersecurity.webp" class="p-2" height="130px;">
+                </div>
+                <div class="col-lg-9">
+                    <p class="text-justify">Technology has been facing rapid development in the past few decades. The
+                        pace of growth of technology has far outstepped the commoner's knowledge of its inner workings.
+                        This leads to people blindly trusting the internet with all of
+                        their data. We at Razz Security believe that every person must keep themselves safe and secure
+                        online. As part of this goal, we conduct a variety of awareness events for free and a few
+                        premium events too. <br> Nowadays the rate
+                        of cyber criminals is increasing due to ignoring Cybersecurity services for the IT
+                        infrastructure of organizations, here Razz Security can go with different strategies to make
+                        cyber free.</p>
+                </div>
+            </div>
+            <!--our services-->
+            <div class="pt-5 pb-4">
+                <h5 class="text-center font-weight-bold">Services at a Glance</h5>
+                <hr class="border border-primary border-2 opacity-90" width="170px;">
+            </div>
+            <h6 class="text-center font-weight-bold pb-4">Information Security Services - We care for your security</h6>
+            <!-- Cyber Security Solutions -->
+            <div class="row">
+                <div class="col-lg-3 pb-1 pt-3">
+                    <div class="card border-trans shadow p-2">
+                        <img class="card-img-top img-fluid center" src="images/webapp.webp" alt="Card image cap" style="height: 100px; width: 150px;">
+                        <div class="card-body">
+                            <h6 class="card-title h1-responsive font-weight-bold text-center">Web App Pentesting</h6>
+                            <p class="card-text text-justify">Secure your customers’ critical data by ensuring that your
+                                web assets are safe, well-protected, and immune to cyberattacks.<br><br><br><br><br></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 pb-1 pt-3">
+                    <div class="card border-trans shadow p-2">
+                        <img class="card-img-top p-1 img-fluid center" src="images/mobileapp.webp" alt="Card image cap" style="height: 100px; width: 150px;">
+                        <div class="card-body">
+                            <h6 class="card-title h1-responsive font-weight-bold text-center">Mobile App pentesting</h6>
+                            <p class="card-text text-justify">Safeguard your mobile application from crackers and other
+                                malicious applications.<br><br><br><br><br><br></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3 pb-1 pt-3">
+                    <div class="card border-trans shadow p-2">
+                        <img class="card-img-top p-1 img-fluid center" src="images/network-system.webp" alt="Card image cap" style="height: 100px; width: 150px;">
+                        <div class="card-body">
+                            <h6 class="card-title h1-responsive font-weight-bold text-center">Network and Systems
+                                Security Assessment</h6>
+                            <p class="card-text text-justify">To ensure that your entire digital presence is safely
+                                covered, we conduct thorough and customized security audits for networks ranging from
+                                small-scale to enterprise-scale.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 pb-1 pt-3">
+                    <div class="card border-trans shadow p-2">
+                        <img class="card-img-top p-1 img-fluid center" src="images/codereview.webp" alt="Card image cap" style="height: 100px; width: 150px;">
+                        <div class="card-body">
+                            <h6 class="card-title h1-responsive font-weight-bold text-center">Source code review</h6>
+                            <p class="card-text text-justify">Catch security bugs before they hit production! With
+                                shift-left security principles and modern DevOps practices, we catch and remedy
+                                potential security issues before they ever become a problem</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- closed -->
+            <!-- Academy -->
+            <h6 class="text-center font-weight-bold pt-5 pb-2">Academy - Your Cybersecurity Learning Platform</h6>
+            <hr class="border border-primary border-2 opacity-90" width="170px;">
+            <p class="text-justify">We provide cybersecurity education to students, businesses, the government,
+                colleges, and schools so that they can understand the security measures required and have the necessary
+                skills to defend against and take advantage of real-world scenarios.
+                This helps to create a safe and secure digital global era. </p>
+            <div class="row">
+                <div class="col-lg-3 pb-1 pt-3">
+                    <div class="card border-trans shadow p-2">
+                        <img class="card-img-top p-1 img-fluid center" src="images/classroom.webp" alt="Card image cap" style="height: 100px; width: 150px;">
+                        <div class="card-body">
+                            <h6 class="card-title h1-responsive font-weight-bold text-center">Classroom Training</h6>
+                            <p class="card-text text-justify">Thorough, intensive, and interactive training sessions,
+                                with one-to-one doubt-clearing sessions, practical labs, and much more!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 pb-1 pt-3">
+                    <div class="card border-trans shadow p-2">
+                        <img class="card-img-top p-1 img-fluid center" src="images/online.webp" alt="Card image cap" style="height: 100px; width: 150px;">
+                        <div class="card-body">
+                            <h6 class="card-title h1-responsive font-weight-bold text-center">Online Training</h6>
+                            <p class="card-text text-justify">Learn from anywhere in the world with live and interactive
+                                online sessions.<br><br><br></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3 pb-1 pt-3">
+                    <div class="card border-trans shadow p-2">
+                        <img class="card-img-top p-1 img-fluid center" src="images/self-paced.webp" alt="Card image cap" style="height: 100px; width: 150px;">
+                        <div class="card-body">
+                            <h6 class="card-title h1-responsive font-weight-bold text-center">Self-Paced Learning</h6>
+                            <p class="card-text text-justify">Learn at your own pace with pre-recorded courses with
+                                guaranteed lifetime availability.<br><br><br></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 pb-1 pt-3">
+                    <div class="card border-trans shadow p-2">
+                        <img class="card-img-top p-1 img-fluid center" src="images/lab.webp" alt="Card image cap" style="height: 100px; width: 150px;">
+                        <div class="card-body">
+                            <h6 class="card-title h1-responsive font-weight-bold text-center">Practical Labs</h6>
+                            <p class="card-text text-justify">Platform for Ethical Hackers to practise and develop their
+                                hacking abilities.<br><br><br></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- explore -->
+            <div class="text-center pt-5 pb-3">
+                <a href="https://academy.razzsecurity.com" style="width: 180px;" class="btn btn-outline-primary">Explore</a>
+            </div>
+            <!-- AcademyClosed -->
+
+            <!-- Blogs -->
+            <!-- <h6 class="text-center font-weight-bold pt-5 pb-2">Blog - something new here!</h6>
+            <hr class="border border-primary border-2 opacity-90" width="170px;">
+            <p class="text-justify">
+                Here you can find your interested topics which keep you engaged with the domain you are in and increase your knowledge.
+            </p> -->
+            <!-- Blogs -->
+            <div class="pt-5 pb-4">
+                <div class="card  ">
+                    <div class="card-body purple-background border rounded shadow">
+                        <div class="" style="align-items:start;">
+                            <h5 class="card-title text-light font-weight-bold">Blog - something new here!</h5>
+                            <p class="card-text text-start text-light font-weight-bold">Here you can find your
+                                interested topics which keep you engaged with the domain you are in and increase your
+                                knowledge.</p>
+                            <a href="https://blog.razzsecurity.com" class="btn btn-primary">Sign up now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <h5 class="mt-5 mb-4"><b>Community - India's #1 Cyber Security Community</b></h5>
+            <!-- Community -->
+            <div class="row">
+                <div class="col-lg-4 text-center p-4">
+                    <img src="images/community.webp" style="height: 200px; width: 250px;" class="img-fluid">
+                </div>
+                <div class="col-lg-8">
+                    <p class="text-justify">According to Razz Security, in this era of rapid technological advancement
+                        and security breaches, which have an impact on national governments, international
+                        organisations, the healthcare system, educational institutions, and millions
+                        of regular people, knowledge should be simple to understand and freely available to all. The
+                        Infosec community group steps in at this point to provide knowledge throughout the community and
+                        maintain conversation.<br> Here you get
+                        some great perks you get for becoming a member:
+                    </p>
+                    <ul>
+                        <li>Connecting Infosec people</li>
+                        <li>Compitions like CTF Challenges</li>
+                        <li>Cyber Security news</li>
+                        <li>free Infosec webinar</li>
+                        <li>make communication easier and discuss interesting relevant topics</li>
+                        <li>career advice</li>
+                        <li>Infosec meetups</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 text-center pt-3">
+                    <a href="https://discord.gg/9UAfz7WVN6" class="p-2 mt-3">
+                        <button type="button" class="btn btn-lg shadow-lg">Join Discord <i class="p-1"><img src="images/discord-logo.webp" alt="" style="height:25px;"></i></button>
+                    </a>
+                </div>
+                <div class="col-lg-6 text-center pt-3">
+                    <a href="connect.html#pills-community-tab" class="p-2 mt-3">
+                        <button type="button" class="btn btn-primary btn-lg shadow-lg">Know More</button>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Community closed -->
+            <h4 class="font-weight-bold text-center pt-5">Why us?</h4>
+            <hr class="border border-primary border-2 opacity-90" width="60px;">
+            <div class="row">
+                <div class="col-lg-3 pt-4 text-center">
+                    <img class="pb-2" src="images/cyberattack.webp" alt="cyberattack" height="75px;" style="padding-left:75px; padding-right:75px;"><br>
+                    <p class="text-center text-justfy">We help to defend various organizations against cyber-attacks.
+                    </p>
+                </div>
+                <div class="col-lg-3 pt-4 text-center">
+                    <img class="pb-2" src="images/securityservices.webp" alt="cyberattack" height="75px;" style="padding-left:75px; padding-right:75px;"><br>
+                    <p class="text-center text-justfy">We help to provide security services that keep them going.</p>
+                </div>
+                <div class="col-lg-3 pt-4 text-center">
+                    <img class="pb-2" src="images/socialengineering.webp" alt="cyberattack" height="75px;" style="padding-left:75px; padding-right:75px;"><br>
+                    <p class="text-center text-justfy">We educate our clients about social engineering scams.</p>
+                </div>
+                <div class="col-lg-3 pt-4 text-center">
+                    <img class="pb-2" src="images/data.webp" alt="cyberattack" height="75px;" style="padding-left:75px; padding-right:75px;"><br>
+                    <p class="text-center text-justfy">We do our best to secure our client's data and protect their
+                        businesses against vulnerabilities.</p>
+                </div>
+            </div>
+            <!-- why us closed -->
+            <h4 class="font-weight-bold text-center pt-4">How are we different?</h4>
+            <hr class="border border-primary border-2 opacity-90" width="180px;">
+            <div class="row">
+
+                <div class="col-lg-3 pt-4 text-center">
+                    <img class="pb-2" src="images/securedservice.webp" alt="cyberattack" height="75px;" style="padding-left:75px; padding-right:75px;"><br>
+                    <p class="text-center text-justfy"><b>Secured Services</b><br>We Provide our clients with the most
+                        secure services that are adequate and authentic.</p>
+                </div>
+                <div class="col-lg-3 pt-4 text-center">
+                    <img class="pb-2" src="images/time.webp" alt="cyberattack" height="75px;" style="padding-left:75px; padding-right:75px;"><br>
+                    <p class="text-center text-justfy"><b>On-time Delivery</b><br>We guarantee the delivery of our work
+                        at the exact time and date mentioned.
+                    </p>
+                </div>
+                <div class="col-lg-3 pt-4 text-center">
+                    <img class="pb-2" src="images/updated.webp" alt="cyberattack" height="75px;" style="padding-left:75px; padding-right:75px;"><br>
+                    <p class="text-center text-justfy"><b>Updated Technology</b><br>We use the most updated technologies
+                        to provide flawless customer results and services.
+                    </p>
+                </div>
+                <div class="col-lg-3 pt-4 text-center">
+                    <img class="pb-2" src="images/passsion.webp" alt="cyberattack" height="75px;" style="padding-left:75px; padding-right:75px;"><br>
+                    <p class="text-center text-justfy"><b>Passionate</b><br>We give our very best as we are fully
+                        passionate about our work and love working on different and challenging projects.</p>
+                </div>
+            </div>
+            <!-- how are we different closed -->
+            <h4 class="font-weight-bold text-center pt-4">Consultation</h4>
+            <hr class="border border-primary border-2 opacity-90" width="100px;">
+            <p class="text-justify">Our Expert will help you find the solutions to your problem or improve the growth of
+                your business in cybersecurity.</p>
+
+            <div class="row pt-3 pb-3">
+                <div class="col-lg-6 text-center pt-3">
+                    <a href="connect.html#pills-consultation-tab" target="_blank" class="p-2 mt-3">
+                        <button type="button" class="btn btn-primary btn-lg shadow-lg p-2 mt-3">Know More </button>
+                    </a>
+                </div>
+                <div class="col-lg-6 text-center pt-3">
+                    <a href="contact.php" class="p-2 mt-3">
+                        <button type="button" class="btn btn-lg shadow-lg">Contact our team<i class="p-1"><img src="images/team.webp" alt="" style="height:40px;"></i></button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer bg-dark mt-5">
+        <div class="container text-light">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h6>About Us</h6>
+                    <p class="text-justify">Razz Security IT Services LLP is a cybersecurity solution, training, and
+                        research company founded in the year 2019, and is recognized by ISO 9001:2015. Today, as more
+                        and more data is becoming digital and accessible through wireless
+                        or wired digital communication networks and across the omnipresent internet, we need some acute
+                        measures to safeguard this information. Businesses suffer from cyber-attacks in the form of data
+                        breaches, making the company's reputation
+                        and customer experience degrade either due to lack of knowledge or negligence of the cyber
+                        security solutions, which ultimately results in greater loss.</p>
+                </div>
+
+                <div class="offset-xs-6 col-xs-6 offset-md-3 col-md-3">
+                    <h6>Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="https://academy.razzsecurity.com/" target="_blank">Academy</a></li>
+                        <li><a href="https://blog.razzsecurity.com/" target="_blank">Blog</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="connect.html">Connect</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="contact.php">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyright © <span id="year"></span> All Rights Reserved by
+                        <a href="/">RazzSecurity</a>.
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="social-icons">
+                        <!--
+                                Linkedin : https://www.linkedin.com/company/razz-security/
+                                Twitter : https://twitter.com/razzsecurity
+                                Instagram : https://www.instagram.com/razzsecurity
+                                Youtube : https://www.youtube.com/channel/UCewzWd85zUdau2Sl0Du_coQ
+                                Facebook : https://www.facebook.com/pages/category/Education/RAZZ-SECURITY-2012822282377545/
+                                github : https://github.com/razzsecurity
+                            -->
+                        <li><a target="_blank" href="https://www.linkedin.com/company/razz-security/"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a target="_blank" href="https://twitter.com/razzsecurity"><i class="fab fa-twitter"></i></a></li>
+                        <li><a target="_blank" href="https://www.instagram.com/razzsecurity"><i class="fab fa-instagram"></i></a></li>
+                        <li><a target="_blank" href="https://www.youtube.com/channel/UCewzWd85zUdau2Sl0Du_coQ"><i class="fab fa-youtube"></i></a></li>
+                        <li><a target="_blank" href="https://www.facebook.com/pages/category/Education/RAZZ-SECURITY-2012822282377545/"><i class="fab fa-facebook"></i></a></li>
+                        <li><a target="_blank" href="https://github.com/razzsecurity"><i class="fab fa-github"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        var tabactions = {
+            'services_trigger': 'svcs-tab',
+            'events_trigger': 'events-tab',
+            'contact_trigger': 'contact-tab',
+            'gallery_trigger': 'gallery-tab',
+            'upcomingEvents_trigger': 'upcomingEvents-tab'
+        };
+
+        $.each(tabactions, function (index, value) {
+            $("#" + index).click(function () {
+                $("#" + value).trigger('click');
+            });
+        });
+
+        $("#year").text(new Date().getFullYear());
+
+        $(".skipBtn").click(function () {
+            $('html, body').animate({
+                scrollTop: $("#main").offset().top - 76
+            }, 750);
+        });
+
+        $(".nav-link").on("shown.bs.tab", function (e) {
+            if ($(".nav-link.active").text() == "Home") {
+                $(".carousel").show();
+            } else {
+                $(".carousel").hide();
+            }
+            $(document).ready(function () {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 750);
+            });
+        });
+    </script>
+    <!-- Tabs js -->
+    <script>
+        // Javascript to enable link to tab
+        // var url = document.location.toString();
+        // $(url.match('#')) {
+        //     $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
+        // }
+
+        // Change hash for page-reload
+        // $('.nav-tabs a').on('shown.bs.tab', function(e) {
+        //     window.location.hash = e.target.hash;
+        // })
+        $(document).ready(function () {
+            var activeTab = window.location.hash;
+            if (activeTab) {
+                $(activeTab)[0].click();
+            }
+        });
+    </script>
+
+
+</body></html>
